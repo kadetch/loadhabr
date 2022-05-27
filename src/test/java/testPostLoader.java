@@ -32,6 +32,8 @@ public class testPostLoader {
         assertEquals("http://habr.com/ru/company/first/blog/661465/", post.getUrl());   //Url
         assertEquals(LocalDateTime.parse("2022-04-21T08:01:33"), post.getPublished());  //Date of publication
         assertNotNull(post.getContent().length());
+        assertFalse(postLoader.getPathOfImages().isEmpty(), "Post have not imaged");
+        assertEquals(32, postLoader.getPathOfImages().size());
 //        System.out.println(post.getContent());
 
     }
@@ -57,3 +59,4 @@ public class testPostLoader {
         return pathBaseDir;
     }
 }
+

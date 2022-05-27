@@ -28,6 +28,7 @@ public class PostLoader {
     private Document doc;
 
     private Post post;
+    private List<String> pathOfImages;
 
     public PostLoader() {
         BASE_DIR = "";
@@ -78,24 +79,21 @@ public class PostLoader {
         }
     }
 
-    private void searchImages(Element content) {
+    private List<String> searchImages(Element content) {
         List<String> images = content.getElementsByTag("img")
                 .stream()
-//                .forEach(image ->
-//                        image.attr("src",
-//                                downloadImage(image.attr("src"))
-//                        )
-//                );
-                .map(image -> image.attr("src", downloadImage(image.attr("src"))))
+                .map(image -> image.attr("src",
+                        downloadImage(image.attr("src"))
+                        )
+                )
                 .map(image -> image.attr("src"))
-//                .forEach(System.out::println);
                 .collect(Collectors.toList());
-        System.out.println(images.size());
+        return images;
     }
 
     private String getPostContent(Document doc) {
         Element content = doc.getElementById("post-content-body");
-        searchImages(content);
+        pathOfImages = searchImages(content);
 //        post.setContent(content.html());
         return content.html();
     }
@@ -145,7 +143,7 @@ public class PostLoader {
             Logger.getLogger(PostLoader.class.getName()).log(Level.SEVERE, null, e);
 //        } catch (IllegalArgumentException e) {
 //            returnUrl = "";
-//            System.out.println("ERROR: File is not image. Errormessage: " + e.getMessage());
+//            System.out.println("ERROR: File is not image. Error message: " + e.getMessage());
         } catch (IOException e) {
 //            returnUrl = "";
             System.out.println("ERROR: " + e.getMessage());
@@ -165,5 +163,8 @@ public class PostLoader {
         return returnUrl;
     }
 
-
+    public List<String> getPathOfImages() {
+        return pathOfImages;
+    }
 }
+

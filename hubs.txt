@@ -1,0 +1,29 @@
+
+===== HUBS =====
+
+<div class="tm-article-snippet__hubs">
+
+<span class="tm-article-snippet__hubs-item">
+    <a href="/ru/company/first/blog/" class="tm-article-snippet__hubs-item-link router-link-active">
+        <span>Блог компании FirstVDS</span>
+     <!----></a></span>
+
+<span class="tm-article-snippet__hubs-item">
+    <a href="/ru/hub/sys_admin/" class="tm-article-snippet__hubs-item-link">
+        <span>Системное администрирование</span> 
+        <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span>
+    </a></span>
+
+<span class="tm-article-snippet__hubs-item">
+    <a href="/ru/hub/dwh/" class="tm-article-snippet__hubs-item-link">
+        <span>Хранение данных</span> 
+        <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span>
+    </a></span>
+
+<span class="tm-article-snippet__hubs-item">    
+    <a href="/ru/hub/devops/" class="tm-article-snippet__hubs-item-link">
+        <span>DevOps</span> 
+        <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span>
+    </a></span>
+
+</div>
